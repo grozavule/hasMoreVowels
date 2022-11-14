@@ -25,6 +25,14 @@ const hasMoreVowels = word => {
     return vowelCount > consonantCount;
 }
 
-console.log(hasMoreVowels('moose'));
-console.log(hasMoreVowels('graph'));
-console.log(hasMoreVowels('Aal'));
+const hasMoreVowels2 = word => {
+    word = word.toLowerCase();
+    
+    let matches = [...word.matchAll(/[a,e,i,o,u]/g)];
+
+    return matches.length > Math.floor(word.length / 2);
+}
+
+console.log(hasMoreVowels2('moose'));
+console.log(hasMoreVowels2('graph'));
+console.log(hasMoreVowels2('Aal'));
